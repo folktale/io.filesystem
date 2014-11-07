@@ -1,0 +1,40 @@
+{
+  "name": "io.filesystem",
+  "version": "0.0.0",
+  "description": "Monadic wrapper on Node's fs library",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/folktale/io.filesystem"
+  },
+  "keywords": [
+    "fantasy-land",
+    "folktale"
+  ],
+  "author": "Quildreen Motta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/folktale/io.filesystem/issues"
+  },
+  "dependencies": {
+    "data.future": "~2.3.0",
+    "adt-simple": "~0.1.3",
+    "core.lambda": "~1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^6.1.0",
+    "ink-docstrap": "git://github.com/robotlolita/docstrap",
+    "jsdoc": "^3.3.0-alpha5",
+    "hifive-spec": "^0.2.2",
+    "hifive": "^0.4.0",
+    "uglify-js": "^2.4.15",
+    "alright": "^1.1.0",
+    "sweet.js": "~0.7.2",
+    "adt-simple": "~0.1.3",
+    "sparkler": "~0.3.4",
+    "sweet-fantasies": "git://github.com/robotlolita/sweet-fantasies#patch-compatibility"
+  }
+}
