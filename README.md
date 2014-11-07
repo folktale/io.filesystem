@@ -104,5 +104,5 @@ Released under the [MIT licence](https://github.com/folktale/io.filesystem/blob/
 [es5-shim]: https://github.com/kriskowal/es5-shim
 [docs]: http://folktale.github.io/io.filesystem
 <!-- [release: https://github.com/folktale/io.filesystem/releases/download/v$VERSION/io.filesystem-$VERSION.tar.gz] -->
-[release]: https://github.com/folktale/io.filesystem/releases/download/v0.0.0/io.filesystem-0.0.0.tar.gz
+[release]: https://github.com/folktale/io.filesystem/releases/download/v0.0.1/io.filesystem-0.0.1.tar.gz
 <!-- [/release] -->

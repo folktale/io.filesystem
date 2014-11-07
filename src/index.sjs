@@ -43,7 +43,7 @@ module.exports = function(fs) {
     Directory,
     File,
     Junction
-  } deriving (adt.Base)
+  } deriving (adt.Base);
 
   exports.LinkType = LinkType;
 
@@ -106,7 +106,7 @@ module.exports = function(fs) {
    * @method
    * @summary LinkType → Pathname → Pathname → Future[Error, Void]
    */
-  exports.symlink = curry(3, link);
+  exports.symlink = curry(3, symlink);
   function symlink(type, a, b) {
     return $liftF Future { fs.symlink a, b, renderType(type) };
   
