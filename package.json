@@ -1,6 +1,6 @@
 {
   "name": "io.filesystem",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Monadic wrapper on Node's fs library",
   "main": "lib/index.js",
   "scripts": {

@@ -190,7 +190,7 @@ module.exports = function(fs) {
    * @method
    * @summary Pathname → Future[Error, String]
    */
-  exports.readAsText = exports.read({ encoding: 'utf-8' });
+  exports.readAsText = exports.read({ encoding: 'utf8' });
   
   
   /**
@@ -207,7 +207,7 @@ module.exports = function(fs) {
    * @method
    * @summary Pathname → String → Future[Error, Void]
    */
-  exports.writeAsText = exports.write({ encoding: 'utf-8' });
+  exports.writeAsText = exports.write({ encoding: 'utf8' });
   
   
   /**
