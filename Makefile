@@ -28,6 +28,9 @@ $(LIB_DIR)/%.js: $(SRC_DIR)/%.sjs
 	       --module adt-simple/macros \
 	       --module sparkler/macros \
 	       --module sweet-fantasies/src/do \
+	       --module es6-macros/macros/destructure \
+	       --module lambda-chop/macros \
+	       --module macros.operators \
 	       --module ./macros/liftF \
 	       --output $@      \
 	       $<

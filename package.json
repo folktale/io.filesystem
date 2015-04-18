@@ -22,7 +22,10 @@
   "dependencies": {
     "data.future": "~2.3.0",
     "adt-simple": "~0.1.3",
-    "core.lambda": "~1.0.0"
+    "core.lambda": "~1.0.0",
+    "mv": "~2.0.3",
+    "control.monads": "~0.6.0",
+    "control.async": "~0.5.1"
   },
   "devDependencies": {
     "browserify": "^6.1.0",
@@ -32,9 +35,12 @@
     "hifive": "^0.4.0",
     "uglify-js": "^2.4.15",
     "alright": "^1.1.0",
-    "sweet.js": "~0.7.2",
+    "sweet.js": "~0.7.4",
     "adt-simple": "~0.1.3",
     "sparkler": "~0.3.4",
-    "sweet-fantasies": "git://github.com/robotlolita/sweet-fantasies#patch-compatibility"
+    "sweet-fantasies": "git://github.com/robotlolita/sweet-fantasies#patch-compatibility",
+    "es6-macros": "0.0.7",
+    "lambda-chop": "~0.1.5",
+    "macros.operators": "~0.5.1"
   }
 }

@@ -28,10 +28,18 @@
 
 var Future = require('data.future');
 var curry  = require('core.lambda').curry;
+var { filterM } = require('control.monads');
+var { parallel } = require('control.async')(Future);
 var adt    = require('adt-simple');
 var path   = require('path');
+var mv     = require('mv');
 
 
+// -- Helpers ----------------------------------------------------------
+var prepend = λ a b -> path.join(a, b);
+var flatten = λ xs -> xs.reduce(λ[# +++ #], []);
+
+// -- Implementation ---------------------------------------------------
 module.exports = function(fs) {
 
   var exports = {};
@@ -273,11 +281,36 @@ module.exports = function(fs) {
   
   /**
    * @method
-   * @summary Pathname → Future[Void, Error]
+   * @summary Pathname → Future[Error, Array[String]]
    */
-  exports.listDirectory = listDirectory
+  exports.listDirectory = listDirectory;
   function listDirectory(a) {
     return $liftF Future { fs.readdir a }
+  }
+
+  /**
+   * @method
+   * @summary Pathname → Future[Error, Array[String]]
+   */
+  exports.listDirectoryRecursively = listDirectoryRecursively;
+  function listDirectoryRecursively(a) {
+    return $do {
+      contents <- listDirectory(a).map(λ[#.map(prepend(a))]);
+      files <- filterM(Future, isFile, contents);
+      dirs <- filterM(Future, isDirectory, contents);
+      children <- parallel <| dirs.map(listDirectoryRecursively);
+      return files.concat(flatten(children));
+    }
+  }
+
+
+  /**
+   * @method
+   * @summary Pathname → Pathname → Future[Void, Error]
+   */
+  exports.move = curry(2, move);
+  function move(a, b) {
+    return $liftF Future { mv { clobber: true }, a, b }
   }
 
 
