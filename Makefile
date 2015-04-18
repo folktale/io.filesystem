@@ -58,7 +58,7 @@ clean:
 	rm -rf dist build $(LIB_DIR)
 
 test: all $(TEST_TGT)
-	node test/tap
+	node test/run
 
 package: documentation
 	mkdir -p dist/$(PACKAGE)-$(VERSION)
