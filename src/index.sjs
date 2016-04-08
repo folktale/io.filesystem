@@ -60,13 +60,17 @@ module.exports = function(fs) {
    * Tests if a path exists.
    *
    * @method
-   * @summary Pathname → Future[Void, Boolean]
+   * @summary Pathname → Future[Error, Boolean]
    */
   exports.exists = exists;
   function exists(p) {
     return new Future(function(reject, resolve) {
-      fs.exists(p, function(a) {
-        resolve(a)
+      fs.stat(p, function(err) {
+        if (err) {
+          reject(err)
+        } else {
+          resolve(true)
+        }
       })
     })
   }
